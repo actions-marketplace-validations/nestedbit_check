@@ -1,0 +1,38 @@
+name: NestedBit Supabase RLS and MCP Check
+description: Lint Supabase migrations for row-level security gaps and check MCP servers' sign-in and tools. Runs on the runner; sends nothing.
+author: NestedBit
+branding:
+  icon: shield
+  color: red
+
+inputs:
+  rls:
+    description: >-
+      Supabase migration SQL to lint: folders (their .sql files are read in name order, like
+      supabase/migrations) or .sql files, one per line or separated by spaces. A .json file
+      from the catalog query on nestedbit.com/tools/supabase-rls-generator works too.
+    required: false
+  mcp:
+    description: >-
+      URL of a running MCP server to check: sign-in, discovery documents and tools. Start the
+      server in an earlier step; http://localhost works.
+    required: false
+  tools:
+    description: A saved tools/list response (JSON) to review offline for risky tools.
+    required: false
+  fail-on:
+    description: Fail the step when a finding is at or above this level. error, warning, notice or never.
+    required: false
+    default: error
+
+outputs:
+  errors:
+    description: Number of error findings.
+  warnings:
+    description: Number of warning findings.
+  notices:
+    description: Number of notice findings.
+
+runs:
+  using: node24
+  main: dist/action.js

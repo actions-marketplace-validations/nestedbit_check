@@ -1,0 +1,16 @@
+{
+  // Type-checks with Node's types. Nothing is emitted: build.mjs bundles src/bin/*.ts into dist/.
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "lib": ["ESNext"],
+    "types": ["node"],
+    "strict": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "engine/**/*.ts", "test/**/*.ts"]
+}

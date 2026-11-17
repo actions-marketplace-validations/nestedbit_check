@@ -1,0 +1,48 @@
+{
+  "name": "@nestedbit/check",
+  "version": "1.0.0",
+  "description": "NestedBit's free Supabase RLS linter and MCP server checker, from a terminal or CI. Nothing is sent anywhere.",
+  "type": "module",
+  "bin": {
+    "nestedbit-check": "dist/cli.js"
+  },
+  "files": [
+    "dist/cli.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "homepage": "https://nestedbit.com/tools",
+  "keywords": [
+    "supabase",
+    "rls",
+    "row-level-security",
+    "postgres",
+    "mcp",
+    "model-context-protocol",
+    "security",
+    "lint",
+    "github-action"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc -p .",
+    "prepack": "node build.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "esbuild": "0.28.2",
+    "typescript": "6.0.3"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nestedbit/check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nestedbit/check/issues"
+  }
+}
