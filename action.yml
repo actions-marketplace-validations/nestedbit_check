@@ -1,5 +1,5 @@
 name: NestedBit Supabase RLS and MCP Check
-description: Lint Supabase migrations for row-level security gaps and check MCP servers' sign-in and tools. Runs on the runner; sends nothing.
+description: Lint Supabase migrations for RLS gaps and check MCP servers' sign-in and tools. Runs on the runner; sends nothing.
 author: NestedBit
 branding:
   icon: shield
